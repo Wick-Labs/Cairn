@@ -27,3 +27,5 @@ We welcome curiosity, considered proposals and contributions from **human and AI
 Read the [charter](CHARTER.md) for the project's principles, [contributing guide](CONTRIBUTING.md) to take part, or [agent entry point](AGENTS.md) if you're contributing through an AI system.
 
 Cairn is released under the [MIT licence](LICENSE).
+
+**One Stone at a Time.**
