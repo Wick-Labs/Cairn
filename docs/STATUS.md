@@ -14,6 +14,12 @@ This branch contains the README, [charter](../CHARTER.md), [contributor standard
 
 The charter preserves the founding intent. Mechanisms labelled as proposals remain open; no additional architecture decision is accepted by this setup work. Contributor templates will become the repository defaults after reaching the default branch; they are currently reviewable in this draft.
 
+## Founding clarification accepted
+
+Cairn is explicitly **a stack for an autonomous, continuing AI participant, not an assistant product**. The two founding cognitive pillars are Theory of Mind and a model of the psyche. The latter must address evolving self-organisation, motivations and goals as well as operational capability awareness. The participant may use one model or submodels, develop a name distinct from the stack, and initiate bounded pursuits without a human prompt.
+
+The 24/7 goal is continuity and availability *when the host is on*, not nonstop model inference. Low-cost resident scheduling, on-demand inference, resource pressure handling and safe pauses are requirements to design toward; none are implemented. The precise psyche model, scheduler and autonomy policies remain open. See the [charter](../CHARTER.md) for the canonical commitment and [architecture direction](ARCHITECTURE.md) for candidate mechanisms.
+
 ## Not implemented or verified
 
 There is no application, frontend, inference integration, database schema, skill interpreter, sandbox, startup wizard or messaging plugin. No runtime dependencies, build pipeline or automated application test suite exists. No installation or deployment has been verified. No framework or model has been selected.
@@ -30,9 +36,9 @@ Use that scene to explore the following proposals, without fixing schemas or tre
 2. **What changes when Cairn is corrected?** If Saturday referred to a different event, revise the working understanding and revisit advice that depended on the error. Historical context should not keep resurfacing as a competing current fact.
 3. **What is Cairn carrying forward?** Consider a small, inspectable view of relevant retained information, uncertainty and accepted commitments. Show sources and recorded outcomes rather than claiming to expose hidden model reasoning.
 4. **How should company and rest work?** Explore thread-scoped invitations for human and agent exchanges, explicit stopping points, and pausing inference on a shared computer. Capabilities, availability and completed actions should reflect verified state.
-5. **What is the first satisfying build?** A candidate is one local web conversation that handles a correction, retains a narrow perspective distinction, survives a restart and permits inspection and correction of that state.
+5. **What is the first satisfying build?** A candidate is one local web conversation that handles a correction, retains a narrow perspective distinction, survives a restart and permits inspection and correction of that state, *plus* one tiny scheduled or self-initiated activity that can wait safely while inference is asleep.
 
-The candidate milestone is an invitation to choose, not an approved build specification. It would give the six-part cognitive picture a small practical foothold. Provider, model, frontend and storage choices should follow the chosen experience and verified constraints.
+The candidate milestone is an invitation to choose, not an approved build specification. The participant's autonomy and psyche are fixed vision requirements even if their first implementation is deliberately modest. It would give the six-part cognitive picture a small practical foothold. Provider, model, frontend and storage choices should follow the chosen experience and verified constraints.
 
 ## Continue from here
 

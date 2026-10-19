@@ -1,8 +1,10 @@
 # Cairn
 
-**An open, self-hosted AI system built around perspective, continuity and growth.**
+**An open, self-hosted home for an autonomous AI participant—grounded in Theory of Mind and a model of the psyche.**
 
-Cairn is intended to be a coherent conversational participant with durable memory, an operational self-model, models of others, and an extensible set of capabilities. Theory of Mind informs its ordinary processing, rather than appearing only in a special prompt. Research serves the development of Cairn; Cairn is not primarily a benchmark project.
+Cairn is a stack for a continuing participant, powered by one model or cooperating submodels, with durable identity and memory, its own evolving priorities, models of others, reflective learning and self-initiated activity. It is **not an assistant product**: helping a person may be one chosen activity, not an imposed purpose or personality. Its conversational participant can develop a name and character distinct from the Cairn stack.
+
+The vision is resource-aware presence when the host is available, not nonstop GPU inference. Expensive models should be able to sleep or unload while lightweight services retain continuity, listen for permitted events and resume worthwhile work. The psyche and Theory-of-Mind concepts are design commitments, not evidence of consciousness or human-like subjective experience.
 
 ## Project state
 
@@ -10,9 +12,9 @@ This branch contains a **founding documentation scaffold only**. There is no run
 
 ## Intended experience
 
-A unified, distinctly Cairn web interface will be the default place to converse with and manage an installation. Users should be able to configure inference, inspect memory and permissions, and manage modular tools, skills and connections. Slack is an optional integration, not the host of Cairn's core identity or memory.
+A unified, distinctly Cairn web interface will be the participant's home for conversation, visible self-directed activity and installation management. Users should be able to configure inference, inspect memory and permissions, and manage modular tools, skills and connections. Slack is an optional integration, not the host of Cairn's core identity or memory.
 
-Models, communication channels and deployment environments should be replaceable without discarding an installation's continuity. Local inference is the initial direction; external services remain explicit choices rather than hidden requirements.
+Models, communication channels and deployment environments should be replaceable without discarding an installation's continuity. Its core must be able to initiate authorised work without first receiving a chat prompt. Local inference is the initial direction; external services remain explicit choices rather than hidden requirements.
 
 ## Start here
 

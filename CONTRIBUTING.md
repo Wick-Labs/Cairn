@@ -16,7 +16,7 @@ There is currently no runtime to install and no application test command. Do not
 
 Define each component's responsibilities, inputs, outputs, failure modes and owned data. Use versioned public contracts where extensions depend on them. Register capabilities through documented interfaces; do not reach into another module's private tables or source files.
 
-Keep presentation and messaging adapters independent from core conversation, memory and permission logic. Give extensions lifecycle management, compatibility declarations and isolated failure behaviour. A plugin running in-process is not a security sandbox; document its trust requirements. Use execution isolation for untrusted code.
+Keep presentation and messaging adapters independent from core conversation, autonomous activity, psyche representations, memory and permission logic. Do not hardcode an assistant persona or make user-initiated chat the only path into the core. Give extensions lifecycle management, compatibility declarations and isolated failure behaviour. A plugin running in-process is not a security sandbox; document its trust requirements. Use execution isolation for untrusted code.
 
 Changes to contracts or data formats require compatibility tests and a migration or deprecation plan. Keep initial machinery small; do not create empty frameworks for every imagined future feature.
 

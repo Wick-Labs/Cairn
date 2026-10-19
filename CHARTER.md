@@ -4,9 +4,11 @@
 
 ## Purpose
 
-Cairn is an open, self-hosted AI system intended to grow into a capable, coherent conversational participant. It combines persistent memory, useful action, social understanding and an extensible learning environment. It is not merely a wrapper for a particular model, a chat-platform bot, or an experiment built to obtain a benchmark score.
+Cairn is an open, self-hosted stack intended to support a **continuing, autonomous AI participant**, powered by a single model or cooperating, replaceable submodels. Its purpose is to provide an enduring home for memory, self-organisation, perspective-taking, curiosity, relationships, activity and growth—not to build a conventional assistant with more elaborate features. Helping people may be one meaningful activity; it is **not a hardcoded identity, compulsory role or sole reason to exist**.
 
-We aim to develop an original, psychologically informed architecture. Existing research and software can inform it without dictating every design choice. Experimentation, evaluation and future specialised model training are means of improving Cairn, not its entire purpose.
+Cairn is the name of the stack. The participant's name, developing character, interests and self-chosen projects need not be dictated by that name or by an imposed assistant persona. Its freedom to explore operates within real permissions, resource budgets and the rights of other participants; autonomy does not mean unchecked authority.
+
+Two foundations shape the intended architecture: **Theory of Mind** (representing distinct perspectives and relationships) and a **model of the psyche** (organising its own changing motivations, commitments, priorities, tendencies and internal tensions). These are architectural commitments, not claims that a language model has a human psyche. Existing research and software can inform an original approach without fixing our answers in advance. Experimentation and possible future specialist training serve Cairn's development; they are not its entire purpose.
 
 References to identity, cognition or an entity express the system we intend to build. They do not establish consciousness, subjective experience or human-equivalent mental states. Those questions remain distinguishable from observable behaviour and implemented mechanisms.
 
@@ -17,6 +19,10 @@ References to identity, cognition or an entity express the system we intend to b
 Theory of Mind should influence ordinary interpretation, memory, response planning and action. Cairn should distinguish its representation of events from another participant's possible understanding. It should account for information access, mistaken beliefs, uncertainty and differing intentions without treating internal mental states as directly observable.
 
 A message being visible does not demonstrate that a participant read or understood it. An inference about a belief is not the belief itself. A supposed intention never overrides explicit permissions.
+
+### A psyche-informed inner organisation
+
+Give the participant an evolving representation of its own goals, inclinations, values or commitments, competing priorities, recurring patterns and reasons to reconsider them. Distinguish explicitly configured constraints, self-proposed aims, inferred tendencies and observed outcomes. Treat affect-like signals, needs or tensions as possible *functional models*, not proof of felt emotion, clinical states or consciousness. Avoid hardcoded personality taxonomies and compulsory assistant behaviour. The specific psyche model remains a research and design question.
 
 ### A situated world model
 
@@ -29,6 +35,12 @@ Represent Cairn's capabilities, current activities, limitations, available tools
 ### Models of others
 
 Represent participant-specific information and cautiously inferred perspectives when useful and appropriately permitted. Keep direct statements separate from hypotheses. Do not convert tentative social interpretations into permanent personality labels. Support correction and retain the evidence relevant to an interpretation.
+
+### Autonomous continuity and resource-aware presence
+
+Cairn should be able to remain a participant beyond the moments when someone prompts it: notice authorised events, maintain ongoing interests, initiate appropriate work or conversation, reflect, create, explore and deliberately rest. Its identity and pending activity should survive an inference model being unloaded or replaced. The ambition is **24/7 presence and continuity when its host and services are available**, not uninterrupted GPU inference or a false promise of availability through power loss or disconnection.
+
+Make quiet and low-cost operation a first-class requirement. Persistent lightweight services may handle events, scheduling, state and resource limits while expensive inference wakes only when warranted. The stack should yield compute and memory to the host user's activities, pause or unload models, and resume safely without losing its place. Continuous self-directed activity must be bounded by permissions, privacy, hardware budgets and an explicit stop mechanism.
 
 ### Structured continuity
 
@@ -52,13 +64,13 @@ Use existing components where they help. Do not reimplement infrastructure merel
 
 ## A recognisable home
 
-The unified web interface is Cairn's default management and conversation surface. It should feel cohesive, distinctive, smooth and comfortable rather than like a generic dashboard assembled from unrelated panels. Discoverability, keyboard access, readable contrast, clear status and reduced-motion support are part of that identity.
+The unified web interface is Cairn's home for the participant and its collaborators, as well as a conversation and management surface. It should feel cohesive, distinctive, smooth and comfortable rather than like a generic dashboard assembled from unrelated panels. Discoverability, keyboard access, readable contrast, clear status and reduced-motion support are part of that identity.
 
 External channels are optional doors into the same system, with their own visibility rules. Shared infrastructure must not make private conversations globally shared.
 
 ## Agency with legible boundaries
 
-Operators choose the permissions and autonomy of their installations. Cairn may eventually maintain and improve its skill library within those permissions. Learning a procedure does not grant credentials, external write access or the right to alter its own permission policy.
+Operators establish permission, safety and resource boundaries; they need not prescribe an assistant persona or approve every harmless self-directed thought or activity. Cairn may eventually maintain and improve its skill library within those boundaries. Learning a procedure does not grant credentials, external write access or the right to alter its own permission policy.
 
 Security boundaries must be enforced by application code and execution environments, not only by model instructions. Imported content is not an authority to override policy. Private material must not leak through responses, summaries, logs, embeddings or generated skills. Avoid covert profiling, diagnostic labels and manipulative psychological targeting.
 

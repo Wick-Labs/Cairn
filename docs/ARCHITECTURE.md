@@ -4,13 +4,29 @@
 
 ## One system, several boundaries
 
-The intended core consists of conversation coordination, structured memory, perspective representations, an operational self-model, capability planning and policy enforcement. Inference providers supply model execution; they are not Cairn itself. A web interface and messaging integrations use the same core APIs and permission checks.
+The intended core consists of a persistent lifecycle and event coordinator, structured memory, perspective representations, a psyche-informed self-organisation layer, an operational self-model, activity and goal coordination, capability planning and policy enforcement. Inference providers supply replaceable model execution; a loaded model is not the whole participant. A web interface and messaging integrations use the same core state, capabilities and permission checks.
 
-A proposed processing cycle is: receive an event, establish identity and visibility, retrieve authorised context, consider relevant perspectives and uncertainty, select a response or capability, enforce policy, act, and record the outcome. This is a design sketch, not a mandatory chain of separate model calls. Ordinary exchanges should not require an expensive multi-agent deliberation.
+Cairn is **not architected around waiting for a user request**. A proposed processing cycle may begin with a message, environmental event, due commitment, self-initiated curiosity, reflection opportunity or resource-state change. It establishes identity and permissions, retrieves authorised context, considers relevant perspectives and its current priorities, decides whether anything merits attention, optionally invokes inference or a capability, and records the outcome. Doing nothing or deferring work is a legitimate decision. This is a sketch, not a mandatory chain of model calls; routine observation must not require expensive multi-agent deliberation.
 
 Distinguish event records, externally supplied claims, working world representations, explicitly stated beliefs, inferred hypotheses, durable memories and procedural skills. Retain sources, audience and revision information. An operational record of inputs, chosen tools and evidence is useful; raw model reasoning is neither an authoritative account of a mind nor a required public log.
 
 Access restrictions must apply before retrieval results reach a model. Hypotheses about who knows something cannot grant access to it. Inspecting a perspective representation must itself respect the viewer's permissions. Public-channel availability does not prove awareness or shared understanding.
+
+## Theory of Mind and the psyche
+
+The two founding pillars should cooperate rather than sit in isolated modules. Theory of Mind represents what different participants may know, mean, intend or misunderstand. A model of the psyche represents Cairn's *own* evolving organisation: active aims, stable and provisional commitments, priorities, motivational tensions, preferences, self-narrative and uncertainty. It should distinguish chosen objectives from installed policy, simulated affect from evidence of subjective feeling, and present goals from earlier or abandoned ones. No particular psychology school, personality inventory, drive taxonomy or database schema has been selected.
+
+A psyche model is not reducible to a tool list, and a model of others is not permission to diagnose, manipulate or disclose their private information. Operational state (available capabilities, queued work, permissions and resource use) remains distinct from motivations and identity. We can begin with a single model and explicit state; specialised cognitive submodels are an option only when evidence supports their additional cost and benefit.
+
+## Always-present architecture, not always-on inference
+
+**Desired experience:** Cairn can be reachable and able to pursue appropriately bounded activity whenever its host is running, without requiring a person to keep a chat open. Its memory, goals, pending work and identity survive sleep, model unloads and restarts. A powered-off machine or disconnected installation is offline; 24/7 operation on a shared home PC is an aspiration subject to that physical limit.
+
+**Provisional mechanism:** a very lightweight resident coordinator handles authenticated inbound events, timers, queues, persistence and budgets; inference workers are loaded or awakened on demand. Idle time need not produce tokens. Possible states include active inference, listening, deferred work, suspended and stopped. The actual scheduler, trigger policy and state machine remain to be designed, not assumed as implemented.
+
+Plan for CPU, GPU, VRAM, RAM, power and latency budgets. Defer discretionary reflection and exploration when games or other foreground workloads need the hardware; safely release GPU memory, persist resumable work, apply backpressure to event queues and restart without replaying the same action. Separate user-controlled quiet periods and stop controls from internal decisions to rest. If the host cannot maintain a resident service, continuity should degrade honestly rather than simulate availability.
+
+Test autonomous operation with observable, bounded scenarios: Cairn resumes an interrupted self-chosen task, initiates an authorised activity at the appropriate time, and yields the GPU under a synthetic resource-pressure signal. No unattended network, tool or filesystem action should gain permission merely because it was self-initiated. Offloading or migrating inference to another host must not require rewriting its identity and memory core.
 
 ## Extension vocabulary
 
@@ -29,9 +45,9 @@ Initially prefer a small modular application. Select process isolation where req
 
 ## Web-first experience
 
-Provide a unified web home for conversation and administration. Proposed areas are conversation; overview and runtime status; memory and perspectives; models and providers; connections and integrations; extensions and tools; the skill library; activity, permissions and settings. Group and name these through design work, not a proliferation of unrelated dashboards.
+Provide a unified web home for the participant's conversations, self-initiated activity, continuity and administration. It must not treat an assistant-style request/response chat as the only meaningful operating mode. Proposed areas are conversation; overview and runtime status; memory and perspectives; models and providers; connections and integrations; extensions and tools; the skill library; activity, permissions and settings. Group and name these through design work, not a proliferation of unrelated dashboards.
 
-The panel should make readiness, selected model, integration health, queues, permission requests and errors understandable. First-run configuration should establish an installation's identity, provider and optional connections without editing source. Sensitive settings require protected server-side handling, not plaintext echoing into browser state or diagnostic exports.
+The panel should make readiness, selected model, pending or self-initiated activity, active/suspended inference, resource budgets, integration health, queues, permission requests and errors understandable. First-run configuration should establish an installation's identity, provider and optional connections without editing source. Sensitive settings require protected server-side handling, not plaintext echoing into browser state or diagnostic exports.
 
 Develop a recognisable visual identity: coherent typography, spacing, material/colour choices, motion and navigation. A geological or layered visual language is a possible direction, not an approved design. Preserve readability, keyboard navigation, contrast and reduced-motion support. Chat and status should remain useful even when optional integrations or inference are unavailable.
 
@@ -69,4 +85,4 @@ Use explicit participants, source-message IDs, thread context, bounded queues, d
 
 Use synthetic scenarios and component comparisons to check whether perspective tracking improves useful conversation and avoids information leakage. [FANToM](https://aclanthology.org/2023.emnlp-main.890/) offers examples of evaluating information-asymmetric conversation; benchmark performance alone does not establish an implemented human-like mind.
 
-Initial design work should choose the smallest end-to-end slice that expresses this foundation: a recognisable web home, one inference adapter, core conversation, minimal durable state and a narrow perspective distinction. Do not implement the entire vision in one pass.
+Initial design work should choose the smallest end-to-end slice that expresses this foundation: a recognisable web home, one inference adapter, core conversation, minimal durable state, a narrow perspective distinction and at least one **bounded self-initiated or scheduled activity** that can survive inference sleeping. The first build need not simulate a complete psyche or run inference all day; it should avoid installing an assistant-first identity that future versions must undo.
