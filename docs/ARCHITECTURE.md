@@ -43,11 +43,29 @@ These distinctions are conceptual, not six mandatory frameworks. A skill may exp
 
 Initially prefer a small modular application. Select process isolation where required by trust or resource ownership, not merely to create microservices. Model replacement should retain installation state, subject to documented schema and capability compatibility rather than a promise of identical behaviour.
 
-## Local runtime and localhost access
+## Local control plane, composable local and remote services
 
-Default installation keeps its core services, inference, persistent state and web assets on the host computer. The web server should bind to loopback and open through localhost by default, not a publicly reachable interface. Offline core use after installation should not depend on external services. Optional network integrations must have explicit configuration and data-access boundaries.
+The default installation keeps Cairn's coordination, identity, configuration, memory and web interface on the owner's computer; the panel binds to a loopback address and is reached through localhost. That local core can use inference on the same machine, a service elsewhere on a trusted network, a hosted API, or several at once. **A local model must not be required to install or use a remotely powered Cairn**, just as a cloud account must not be required for a fully local installation.
 
-LAN access, remote hosting and distributed inference are deliberate future modes, requiring appropriate security. A local service may run while the browser is closed; when the host is off, Cairn is offline. Exact ports and implementation mechanisms remain undecided.
+Core management and persisted state should remain available while offline. Model-dependent operations continue offline only when a suitable local inference provider is available. The system should report connectivity limits rather than pretend that unreachable external capabilities work. Optional remote deployment of the core and exposing local, LAN or public endpoints must require explicit configuration and transport/authentication safeguards; the default localhost web panel must not be publicly reachable.
+
+## Per-connection configuration, BYOK and routing
+
+Model providers, agent workflows, tools, service integrations and transport endpoints may be local or remote independently. Treat every installed **connection instance** as separately configurable, including multiple accounts or endpoints for the same provider. Its proposed contract should express provider type, address, authentication method, advertised capabilities, participant access, authorised data scope, outbound context visibility, pricing or resource budgets, rate limits, health, failure behaviour and lifecycle. The exact schema is still open.
+
+Support bring-your-own-key credentials where an integration's legitimate authentication system permits it. Store secrets in protected configuration, not source control, browser logs, prompts or model-visible text. Users should be able to grant, limit, revoke, audit and inspect **individual connections** rather than enabling all remote access globally. A connection being available does not authorise sharing every memory with it.
+
+Both humans and model participants should be able to request and, where permitted, select from available tools and providers. Cairn can choose an appropriate local or remote inference route for a bounded self-initiated task using operator-approved policies, capability requirements, preferences and budgets. **The host's permission engine validates each use and the context sent before routing**, including automatic fallback: a local failure must never silently forward local-only or private context to an external endpoint. Model proposals cannot expand credentials, network privileges or data scopes.
+
+## Provider families and compatibility
+
+Examples to investigate, **not implemented adapters or a closed list**:
+
+- **Inference servers and APIs:** local [Ollama](https://docs.ollama.com/api), local [LM Studio](https://lmstudio.ai/docs/developer/rest), remote [Claude API](https://platform.claude.com/docs/en/api/http/messages), [OpenRouter](https://openrouter.ai/developers), OpenAI APIs, compatible custom endpoints and other local or hosted providers.
+- **Agent workflows:** [Codex SDK/app-server or supported API integrations](https://developers.openai.com/blog/codex-as-a-platform), and other agent runtimes, can be added as bounded workflow capabilities. A coding agent is not automatically interchangeable with a plain model-completion endpoint.
+- **Tool and process runtimes:** Python and other local or remote execution environments can expose authorised tools or host custom model services; Python itself is not an inference protocol.
+
+Use adapters for provider-native protocols and explicitly negotiated compatibility profiles (for example OpenAI-compatible, Anthropic-compatible and native inference endpoints). Distinguish supported features such as streaming, tool calling, structured output, context limits, cancellation, observability and pricing. Equivalent-looking API paths do not guarantee identical semantics, and a local endpoint is not automatically trusted. Prefer a common capability vocabulary without forcing all integrations through one lossy protocol. Exact adapters, execution isolation, credentials and fallback policies belong to implementation work, not this founding document.
 
 ## Web-first experience
 
@@ -81,7 +99,7 @@ Learning a skill changes procedural resources and application state; it does not
 
 ## Initial implementation candidates
 
-Python, Ollama and SQLite are provisional starting candidates, not an installed or final stack. Frontend framework, distribution method, configuration schemas, module APIs and model selection are unresolved. A single model can initially serve several cognitive roles. Specialised sub-models may be introduced if their value justifies latency and memory costs.
+Python, Ollama and SQLite are provisional development examples, not mandatory dependencies or an installed stack; an installation may use remote inference without running a local model. Frontend framework, distribution method, configuration schemas, module APIs and model selection are unresolved. A single model can initially serve several cognitive roles. Specialised sub-models may be introduced if their value justifies latency and memory costs.
 
 Slack is an intended early optional integration. Slack's [Socket Mode](https://docs.slack.dev/apis/events-api/using-socket-mode/) can support a local app without a public HTTP request endpoint. Test its actual event behaviour, external-agent interaction and permissions; connector access is not proof of unattended bot-to-bot dialogue. Socket Mode's public Marketplace restrictions also require separate distribution planning.
 

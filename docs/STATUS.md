@@ -20,9 +20,13 @@ Cairn is explicitly **a stack for an autonomous, continuing AI participant, not 
 
 The 24/7 goal is continuity and availability *when the host is on*, not nonstop model inference. Low-cost resident scheduling, on-demand inference, resource pressure handling and safe pauses are requirements to design toward; none are implemented. The precise psyche model, scheduler and autonomy policies remain open. See the [charter](../CHARTER.md) for the canonical commitment and [architecture direction](ARCHITECTURE.md) for candidate mechanisms.
 
-## Local deployment requirement
+## Founding configuration clarification accepted
 
-The agreed default is a fully local stack with local inference and memory, presented through a **localhost web interface**. A browser-based UI does not imply remote hosting. Offline core use, optional external connections and deliberate network exposure are design requirements, not implemented behaviour. The precise implementation and ports remain open.
+**Local-first is Cairn's default deployment, not a local-only restriction.** The core, retained identity, memory and browser panel run locally with localhost access by default; an installation may use fully local inference, fully remote inference or a mixture, plus local or remote integrations, tools and endpoints in any supported combination. A local model is not mandatory for remote-powered installations; internet access is not mandatory for appropriately configured, fully local installations. Moving the core to a remote host or enabling externally reachable endpoints remains a deliberate choice.
+
+Bring-your-own-key and independent configuration **per connection instance** are requirements. Both the operator and participating models can choose among authorised connections, subject to distinct credentials, allowed audiences, data scopes, permission checks and budgets. There is no global remote-connection toggle that grants every service access to everything. See the [charter](../CHARTER.md) for the agreed principle and [architecture direction](ARCHITECTURE.md) for proposed contracts.
+
+Specific inference and workflow adapters are still candidates, not installed features. Potential routes include Ollama or LM Studio, Claude and OpenRouter APIs, Codex agent workflows, and custom Python-backed services; their actual integration mechanisms and capability limitations must be verified during implementation.
 
 ## Not implemented or verified
 

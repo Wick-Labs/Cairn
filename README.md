@@ -10,15 +10,17 @@ The vision is resource-aware presence when the host is available, not nonstop GP
 
 This branch contains a **founding documentation scaffold only**. There is no runnable application, web panel, model integration, skill runtime or Slack bot yet. Aspirations below are not implemented features. Read [current state](docs/STATUS.md) before beginning work.
 
-## Local-first by design
+## Local-first home, mix-and-match capabilities
 
-Cairn runs on the user's computer by default. Its web panel is accessed at **localhost** in a browser; this does not mean Cairn is a hosted web service. Core operation, local inference and persistent memory should work without an internet connection once installed. External connections and future remote deployments are opt-in.
+Cairn's default core runs on the installation owner's computer, with its browser panel reached through **localhost**. The web interface is not evidence of cloud hosting. Memory, identity, configuration and basic management should work offline once installed, and local inference should allow fully offline conversation where an appropriate local model is available.
+
+**The stack must also support remote inference, remote integrations and remote endpoints as first-class, optional resources.** A local model is not required if the user chooses remote inference. Local and remote providers, connections, tools and endpoints can be combined per installation—and selected for permitted activities by humans or by Cairn's participating models. Bring-your-own-key (BYOK), per-integration credentials, scopes, data-sharing controls and resource/cost budgets are foundational requirements, not one global network access toggle. A hosted core or remote web interface is a separate optional deployment choice.
 
 ## Intended experience
 
 A unified, distinctly Cairn web interface will be the participant's home for conversation, visible self-directed activity and installation management. Users should be able to configure inference, inspect memory and permissions, and manage modular tools, skills and connections. Slack is an optional integration, not the host of Cairn's core identity or memory.
 
-Models, communication channels and deployment environments should be replaceable without discarding an installation's continuity. Its core must be able to initiate authorised work without first receiving a chat prompt. Local inference is the initial direction; external services remain explicit choices rather than hidden requirements.
+Models, communication channels and deployment environments should be replaceable without discarding an installation's continuity. Its core must be able to initiate authorised work without first receiving a chat prompt. Inference may run locally or remotely through independently configured providers. No one runtime, vendor or cloud account is a prerequisite for Cairn's core.
 
 ## Start here
 

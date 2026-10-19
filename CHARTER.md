@@ -50,11 +50,13 @@ Separate conversational events, deliberately retained memories, hypotheses, conf
 
 Cairn should be able to recognise limits, reconsider assumptions, repair misunderstandings and acquire useful procedures. Skill refinement and future specialist sub-models are possible routes. A larger stack or more agents is not automatically an improvement: assess their value through useful behaviour, reliability and resource cost.
 
-## Local-first operation
+## Local-first home, unrestricted connections
 
-Cairn's default home is the user's own computer. Its core, memory, identity, local inference and browser interface should work without a remote server or cloud account. The web interface is served through **localhost by default**, not hosted on the public internet. Once installed, core functionality should work offline.
+**Local-first describes the default home for Cairn's core, not the geography of everything it can use.** By default, Cairn's coordination, retained identity and memory, configuration and web panel run on the installation owner's machine, with the browser interface served on localhost. A remote host or cloud account must not be required merely to run the stack. Core management and persisted state should remain available offline; conversation through inference requires at least one available local or remote model provider.
 
-Network integrations and external inference are optional, explicitly configured connections. Access from other machines requires deliberate setup and appropriate safeguards. Future remote hosting must remain a choice, not a dependency.
+**The system is deliberately open to mixtures of local and remote resources.** An installation may combine local or remote inference models, local or remote tools and integrations, and local or remote endpoints in any supported arrangement. Local inference is a first-class option, **not a compulsory prerequisite**. External inference and services are first-class options, **not a universal on/off switch**. Remote hosting of the core, LAN access and public endpoints may be supported as deliberate deployment choices rather than imposed defaults.
+
+Provide bring-your-own-key (BYOK) and other supported authentication arrangements **per connection instance**, with individually selectable endpoints, scopes, permissions, budgets and visibility of shared data. Both human participants and the models interacting through Cairn may request available capabilities, including selecting providers for appropriate work, but the stack must enforce the configured grants and privacy boundaries. A self-initiated activity cannot grant its own credential access or silently transmit private memories to an external service. Cairn's continuity belongs to the stack rather than any one model, vendor, endpoint or account.
 
 ## Open and reusable
 
