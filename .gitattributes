@@ -1,0 +1,2 @@
+# Normalise text across platforms while letting Git recognise binary files.
+* text=auto eol=lf

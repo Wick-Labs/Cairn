@@ -2,6 +2,8 @@
 
 These standards apply to human and AI contributors. They are intended to make Cairn understandable, portable and enjoyable to develop, not to create paperwork for its own sake.
 
+Use the [pull request template](.github/pull_request_template.md) for a concise review summary. Early proposals can use the [design idea template](.github/ISSUE_TEMPLATE/design-idea.md); opening an issue does not accept a design.
+
 ## Begin from a verified branch
 
 Read [README.md](README.md), [the charter](CHARTER.md), [current state](docs/STATUS.md) and the relevant parts of [the architecture direction](docs/ARCHITECTURE.md). Establish the remote, branch and commit before changing anything. Check for existing work and reconcile differences; never discard newer local work simply because a remote exists.

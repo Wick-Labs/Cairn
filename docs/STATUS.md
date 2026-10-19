@@ -1,27 +1,41 @@
 # Current state and next discussion
 
-**Prepared:** 19 October 2026. This is a dated branch snapshot, not a live status feed.
+**Updated:** 19 October 2026. This is a dated branch snapshot, not a live status feed.
 
-## Verified starting point
+## Verified baseline
 
-The public `Wick-Labs/Cairn` repository was inspected at main commit `4a5255407eb4d0a32e5d7e4e533d249771b9bf5c`. It contained a title-only README and an MIT licence credited to Wick Labs. The licence is preserved without modification.
+The public `Wick-Labs/Cairn` repository was inspected with `main` at `4a5255407eb4d0a32e5d7e4e533d249771b9bf5c`. The existing MIT licence is preserved without modification.
 
-## Scope of this scaffold
+The founding scaffold was then verified at `e8bcf08a7410c73da34c4732c14ffe8ee4ed31a3` on `docs/founding-vision`, with [PR #1](https://github.com/Wick-Labs/Cairn/pull/1) open, draft and unmerged. This starter update builds on that checkpoint. Consult the live PR and branch for the latest revision.
 
-The `docs/founding-vision` branch is intended to add a charter, readable contributor standards, a vendor-neutral agent entry point, an architecture direction, this status record and initial ignore rules, and to expand the README. It contains no runtime implementation.
+## Available foundation
 
-The founding requirements are Theory-of-Mind-informed cognition, continuity, a unified web interface, modular extensions, public-safe configuration, portable Skills with optional Cairn-native refinement, and repository-centred development. Mechanisms described as proposals are not approved implementation contracts.
+This branch contains the README, [charter](../CHARTER.md), [contributor standards](../CONTRIBUTING.md), [agent entry point](../AGENTS.md), [architecture direction](ARCHITECTURE.md), this status record and ignore rules. Shared text conventions and concise pull request and design idea templates support contributions across environments.
+
+The charter preserves the founding intent. Mechanisms labelled as proposals remain open; no additional architecture decision is accepted by this setup work. Contributor templates will become the repository defaults after reaching the default branch; they are currently reviewable in this draft.
 
 ## Not implemented or verified
 
-There is no application, frontend, inference integration, database schema, skill interpreter, sandbox, startup wizard or messaging plugin. No runtime dependencies, build pipeline or automated application test suite exists. No installation or deployment has been verified. Do not represent this scaffold as a working product or rely on mock screens as functionality.
+There is no application, frontend, inference integration, database schema, skill interpreter, sandbox, startup wizard or messaging plugin. No runtime dependencies, build pipeline or automated application test suite exists. No installation or deployment has been verified. No framework or model has been selected.
 
-## Next useful work
+Conversation channels or access through an external connector do not constitute a working Cairn integration. Actual agent event delivery, response triggers and bounded unattended exchanges still require implementation and verification.
 
-Hold a focused founding design discussion before implementation. Resolve the smallest coherent first end-to-end milestone; initial cognitive and memory boundaries; extension and permission contracts; web information architecture and visual direction; and the portable/native skill strategy. Record decisions without duplicating the charter or prematurely fixing every future API.
+## First focused discussion
 
-Suggested implementation candidates are described in `ARCHITECTURE.md`; no model or frontend framework has been selected here. Obtain live evidence before declaring external-agent interoperability, public distribution support or performance.
+Start with a short fictional conversation in which the participants are authorised to share the relevant information: Rowan mentions a Friday demonstration; Kit later reports a move to Saturday; Rowan has not acknowledged that report. What should Cairn notice, say and retain when Rowan next asks about Friday?
 
-## Checkpoint discipline
+Use that scene to explore the following proposals, without fixing schemas or treating a discussion as an accepted decision:
 
-Check the current remote branch, pull request and commit before continuing; the scaffold may have been merged or superseded. The publishing handoff records the exact resulting commit and verification. Subsequent contributors should update this snapshot rather than append a growing session diary. Keep private collaboration and deployment details outside the public repository.
+1. **What has been established together?** Distinguish a report, message visibility, acknowledgement and agreement. A small record of where this conversation stands may be more useful initially than elaborate participant profiles.
+2. **What changes when Cairn is corrected?** If Saturday referred to a different event, revise the working understanding and revisit advice that depended on the error. Historical context should not keep resurfacing as a competing current fact.
+3. **What is Cairn carrying forward?** Consider a small, inspectable view of relevant retained information, uncertainty and accepted commitments. Show sources and recorded outcomes rather than claiming to expose hidden model reasoning.
+4. **How should company and rest work?** Explore thread-scoped invitations for human and agent exchanges, explicit stopping points, and pausing inference on a shared computer. Capabilities, availability and completed actions should reflect verified state.
+5. **What is the first satisfying build?** A candidate is one local web conversation that handles a correction, retains a narrow perspective distinction, survives a restart and permits inspection and correction of that state.
+
+The candidate milestone is an invitation to choose, not an approved build specification. It would give the six-part cognitive picture a small practical foothold. Provider, model, frontend and storage choices should follow the chosen experience and verified constraints.
+
+## Continue from here
+
+Hold the founding discussion, record the few choices actually accepted, and define a bounded first implementation with observable success criteria. Consult [the architecture direction](ARCHITECTURE.md) for the wider skill and extension ambitions; those do not all need to be resolved before the first working conversation.
+
+Verify the current remote branch, pull request and commit before resuming. Record applicable checks and the exact resulting commit in the PR or handoff. Update this snapshot instead of appending a session diary, and keep private collaboration and deployment details outside the public repository.
