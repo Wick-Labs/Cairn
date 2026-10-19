@@ -1,0 +1,34 @@
+# Installation secrets and environment overrides; commit only sanitised examples.
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+# Private installation state; synthetic fixtures belong under tests/fixtures.
+/runtime/
+/data/
+/models/
+/logs/
+/secrets/
+*.db
+*.db-*
+*.sqlite
+*.sqlite-*
+*.sqlite3
+*.sqlite3-*
+
+# Common local environments and generated caches.
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+node_modules/
+dist/
+build/
+coverage/
+.DS_Store
+Thumbs.db
