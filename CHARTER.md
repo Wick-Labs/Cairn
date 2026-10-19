@@ -50,6 +50,12 @@ Separate conversational events, deliberately retained memories, hypotheses, conf
 
 Cairn should be able to recognise limits, reconsider assumptions, repair misunderstandings and acquire useful procedures. Skill refinement and future specialist sub-models are possible routes. A larger stack or more agents is not automatically an improvement: assess their value through useful behaviour, reliability and resource cost.
 
+## Local-first operation
+
+Cairn's default home is the user's own computer. Its core, memory, identity, local inference and browser interface should work without a remote server or cloud account. The web interface is served through **localhost by default**, not hosted on the public internet. Once installed, core functionality should work offline.
+
+Network integrations and external inference are optional, explicitly configured connections. Access from other machines requires deliberate setup and appropriate safeguards. Future remote hosting must remain a choice, not a dependency.
+
 ## Open and reusable
 
 Cairn is a public, MIT-licensed project. An installation should be usable without the founders' accounts, infrastructure or private history. Deployment identity, integrations, participants, credentials and retained memories belong to that installation, not the shared source.

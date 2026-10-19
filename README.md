@@ -10,6 +10,10 @@ The vision is resource-aware presence when the host is available, not nonstop GP
 
 This branch contains a **founding documentation scaffold only**. There is no runnable application, web panel, model integration, skill runtime or Slack bot yet. Aspirations below are not implemented features. Read [current state](docs/STATUS.md) before beginning work.
 
+## Local-first by design
+
+Cairn runs on the user's computer by default. Its web panel is accessed at **localhost** in a browser; this does not mean Cairn is a hosted web service. Core operation, local inference and persistent memory should work without an internet connection once installed. External connections and future remote deployments are opt-in.
+
 ## Intended experience
 
 A unified, distinctly Cairn web interface will be the participant's home for conversation, visible self-directed activity and installation management. Users should be able to configure inference, inspect memory and permissions, and manage modular tools, skills and connections. Slack is an optional integration, not the host of Cairn's core identity or memory.

@@ -20,6 +20,10 @@ Cairn is explicitly **a stack for an autonomous, continuing AI participant, not 
 
 The 24/7 goal is continuity and availability *when the host is on*, not nonstop model inference. Low-cost resident scheduling, on-demand inference, resource pressure handling and safe pauses are requirements to design toward; none are implemented. The precise psyche model, scheduler and autonomy policies remain open. See the [charter](../CHARTER.md) for the canonical commitment and [architecture direction](ARCHITECTURE.md) for candidate mechanisms.
 
+## Local deployment requirement
+
+The agreed default is a fully local stack with local inference and memory, presented through a **localhost web interface**. A browser-based UI does not imply remote hosting. Offline core use, optional external connections and deliberate network exposure are design requirements, not implemented behaviour. The precise implementation and ports remain open.
+
 ## Not implemented or verified
 
 There is no application, frontend, inference integration, database schema, skill interpreter, sandbox, startup wizard or messaging plugin. No runtime dependencies, build pipeline or automated application test suite exists. No installation or deployment has been verified. No framework or model has been selected.

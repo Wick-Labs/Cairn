@@ -43,6 +43,12 @@ These distinctions are conceptual, not six mandatory frameworks. A skill may exp
 
 Initially prefer a small modular application. Select process isolation where required by trust or resource ownership, not merely to create microservices. Model replacement should retain installation state, subject to documented schema and capability compatibility rather than a promise of identical behaviour.
 
+## Local runtime and localhost access
+
+Default installation keeps its core services, inference, persistent state and web assets on the host computer. The web server should bind to loopback and open through localhost by default, not a publicly reachable interface. Offline core use after installation should not depend on external services. Optional network integrations must have explicit configuration and data-access boundaries.
+
+LAN access, remote hosting and distributed inference are deliberate future modes, requiring appropriate security. A local service may run while the browser is closed; when the host is off, Cairn is offline. Exact ports and implementation mechanisms remain undecided.
+
 ## Web-first experience
 
 Provide a unified web home for the participant's conversations, self-initiated activity, continuity and administration. It must not treat an assistant-style request/response chat as the only meaningful operating mode. Proposed areas are conversation; overview and runtime status; memory and perspectives; models and providers; connections and integrations; extensions and tools; the skill library; activity, permissions and settings. Group and name these through design work, not a proliferation of unrelated dashboards.
