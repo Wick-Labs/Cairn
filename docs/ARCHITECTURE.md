@@ -61,7 +61,7 @@ Both humans and model participants should be able to request and, where permitte
 
 Examples to investigate, **not implemented adapters or a closed list**:
 
-- **Inference servers and APIs:** local [Ollama](https://docs.ollama.com/api), local [LM Studio](https://lmstudio.ai/docs/developer/rest), remote [Claude API](https://platform.claude.com/docs/en/api/http/messages), [OpenRouter](https://openrouter.ai/developers), OpenAI APIs, compatible custom endpoints and other local or hosted providers.
+- **Inference servers and APIs:** local [Ollama](https://docs.ollama.com/api), local [LM Studio](https://lmstudio.ai/docs/developer/rest), remote [Claude API](https://platform.claude.com/docs/en/api/overview), [OpenRouter](https://openrouter.ai/developers), OpenAI APIs, compatible custom endpoints and other local or hosted providers.
 - **Agent workflows:** [Codex SDK/app-server or supported API integrations](https://developers.openai.com/blog/codex-as-a-platform), and other agent runtimes, can be added as bounded workflow capabilities. A coding agent is not automatically interchangeable with a plain model-completion endpoint.
 - **Tool and process runtimes:** Python and other local or remote execution environments can expose authorised tools or host custom model services; Python itself is not an inference protocol.
 
@@ -109,4 +109,4 @@ Use explicit participants, source-message IDs, thread context, bounded queues, d
 
 Use synthetic scenarios and component comparisons to check whether perspective tracking improves useful conversation and avoids information leakage. [FANToM](https://aclanthology.org/2023.emnlp-main.890/) offers examples of evaluating information-asymmetric conversation; benchmark performance alone does not establish an implemented human-like mind.
 
-Initial design work should choose the smallest end-to-end slice that expresses this foundation: a recognisable web home, one inference adapter, core conversation, minimal durable state, a narrow perspective distinction and at least one **bounded self-initiated or scheduled activity** that can survive inference sleeping. The first build need not simulate a complete psyche or run inference all day; it should avoid installing an assistant-first identity that future versions must undo.
+Initial design work should **choose**, not inherit, a small end-to-end slice that expresses the foundation. A candidate is one local web home, an interchangeable local or remote inference connection, durable state, a narrow perspective distinction and one modest self-initiated activity that can survive inference sleeping. This is a conversation starter, not an approved milestone. The first build need not simulate a complete psyche or run inference all day, but it should avoid installing an assistant-first identity that later versions must undo.

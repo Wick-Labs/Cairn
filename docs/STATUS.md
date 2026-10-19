@@ -1,55 +1,33 @@
 # Current state and next discussion
 
-**Updated:** 19 October 2026. This is a dated branch snapshot, not a live status feed.
+**Updated:** 19 October 2026. This is a dated repository snapshot, not a live status feed. Verify the current branch and Git history before making changes.
 
-## Verified baseline
+## What exists
 
-The public `Wick-Labs/Cairn` repository was inspected with `main` at `4a5255407eb4d0a32e5d7e4e533d249771b9bf5c`. The existing MIT licence is preserved without modification.
+Cairn has an initial **documentation-only foundation**: a [README](../README.md), [charter](../CHARTER.md), [architecture direction](ARCHITECTURE.md), [contributor standards](../CONTRIBUTING.md), [agent entry point](../AGENTS.md), source-control conventions, lightweight contribution templates and the existing MIT licence. The founding changes were prepared and reviewed through [PR #1](https://github.com/Wick-Labs/Cairn/pull/1); consult its live status rather than assuming a particular branch or merge state.
 
-The founding scaffold was then verified at `e8bcf08a7410c73da34c4732c14ffe8ee4ed31a3` on `docs/founding-vision`, with [PR #1](https://github.com/Wick-Labs/Cairn/pull/1) open, draft and unmerged. This starter update builds on that checkpoint. Consult the live PR and branch for the latest revision.
+There is **no running Cairn application**: no inference integration, web UI, database schema, memory engine, psyche implementation, scheduler, Slack bot, Skills runtime, deployment or test suite. No framework, model, provider, port or public API has been selected. No application tests, CI or local installation have been verified.
 
-## Available foundation
+## Agreed founding direction
 
-This branch contains the README, [charter](../CHARTER.md), [contributor standards](../CONTRIBUTING.md), [agent entry point](../AGENTS.md), [architecture direction](ARCHITECTURE.md), this status record and ignore rules. Shared text conventions and concise pull request and design idea templates support contributions across environments.
+Cairn is an open stack for a **continuing, autonomous AI participant**, not a hardcoded assistant. Theory of Mind and a model of the psyche are foundational design concerns, alongside inspectable continuity, self-directed activity within configured boundaries, a distinct web home, and freedom to use one model or cooperating submodels. Nothing in this direction establishes consciousness or human-equivalent subjective states.
 
-The charter preserves the founding intent. Mechanisms labelled as proposals remain open; no additional architecture decision is accepted by this setup work. Contributor templates will become the repository defaults after reaching the default branch; they are currently reviewable in this draft.
+**Local-first is the default home, not a local-only restriction.** The core, identity, memory and web interface default to the user's own machine, with browser access through localhost. Inference, tools, integrations and endpoints may each be local or remote, in any supported mixture. A local model is not mandatory for remote-powered use, and an appropriately configured local system need not depend on cloud accounts. BYOK and independently configured, authorised connections—with distinct data scopes, credentials and budgets—are requirements.
 
-## Founding clarification accepted
+The 24/7 ambition is a continuing presence **when the host and services are available**, not nonstop GPU inference. Resource-aware quiet operation, safe model unloads and resumable activity are requirements to explore; their implementations have not been chosen.
 
-Cairn is explicitly **a stack for an autonomous, continuing AI participant, not an assistant product**. The two founding cognitive pillars are Theory of Mind and a model of the psyche. The latter must address evolving self-organisation, motivations and goals as well as operational capability awareness. The participant may use one model or submodels, develop a name distinct from the stack, and initiate bounded pursuits without a human prompt.
+For canonical intent, see the [charter](../CHARTER.md). Mechanisms and integration vocabulary are deliberately provisional in the [architecture direction](ARCHITECTURE.md).
 
-The 24/7 goal is continuity and availability *when the host is on*, not nonstop model inference. Low-cost resident scheduling, on-demand inference, resource pressure handling and safe pauses are requirements to design toward; none are implemented. The precise psyche model, scheduler and autonomy policies remain open. See the [charter](../CHARTER.md) for the canonical commitment and [architecture direction](ARCHITECTURE.md) for candidate mechanisms.
+## Design questions still open
 
-## Founding configuration clarification accepted
+We have not selected a psyche model, memory representation, lifecycle scheduler, resource policy, inference framework, provider adapters, plugin contracts, trust isolation, web design or first implementation milestone. The initial build should not silently convert our shared vision into a request-and-response assistant architecture.
 
-**Local-first is Cairn's default deployment, not a local-only restriction.** The core, retained identity, memory and browser panel run locally with localhost access by default; an installation may use fully local inference, fully remote inference or a mixture, plus local or remote integrations, tools and endpoints in any supported combination. A local model is not mandatory for remote-powered installations; internet access is not mandatory for appropriately configured, fully local installations. Moving the core to a remote host or enabling externally reachable endpoints remains a deliberate choice.
+## Where the next conversation begins
 
-Bring-your-own-key and independent configuration **per connection instance** are requirements. Both the operator and participating models can choose among authorised connections, subject to distinct credentials, allowed audiences, data scopes, permission checks and budgets. There is no global remote-connection toggle that grants every service access to everything. See the [charter](../CHARTER.md) for the agreed principle and [architecture direction](ARCHITECTURE.md) for proposed contracts.
+A useful fictional scene: Rowan mentioned a Friday demonstration. Kit later reported that it moved to Saturday, but Rowan has not acknowledged the report. What should Cairn notice, ask, remember and revise when Rowan asks about Friday? What changes if Kit's report was provisional or mistaken? This helps us explore perspective, provenance, correction and continuity.
 
-Specific inference and workflow adapters are still candidates, not installed features. Potential routes include Ollama or LM Studio, Claude and OpenRouter APIs, Codex agent workflows, and custom Python-backed services; their actual integration mechanisms and capability limitations must be verified during implementation.
+Alongside that, consider **one small self-initiated interest or task**: how would Cairn decide to revisit it later, wait quietly when the host is busy, and resume after inference is unloaded? Decide together what experience would be satisfying enough to build first; do not treat either example as an approved specification.
 
-## Not implemented or verified
+## Continuing development
 
-There is no application, frontend, inference integration, database schema, skill interpreter, sandbox, startup wizard or messaging plugin. No runtime dependencies, build pipeline or automated application test suite exists. No installation or deployment has been verified. No framework or model has been selected.
-
-Conversation channels or access through an external connector do not constitute a working Cairn integration. Actual agent event delivery, response triggers and bounded unattended exchanges still require implementation and verification.
-
-## First focused discussion
-
-Start with a short fictional conversation in which the participants are authorised to share the relevant information: Rowan mentions a Friday demonstration; Kit later reports a move to Saturday; Rowan has not acknowledged that report. What should Cairn notice, say and retain when Rowan next asks about Friday?
-
-Use that scene to explore the following proposals, without fixing schemas or treating a discussion as an accepted decision:
-
-1. **What has been established together?** Distinguish a report, message visibility, acknowledgement and agreement. A small record of where this conversation stands may be more useful initially than elaborate participant profiles.
-2. **What changes when Cairn is corrected?** If Saturday referred to a different event, revise the working understanding and revisit advice that depended on the error. Historical context should not keep resurfacing as a competing current fact.
-3. **What is Cairn carrying forward?** Consider a small, inspectable view of relevant retained information, uncertainty and accepted commitments. Show sources and recorded outcomes rather than claiming to expose hidden model reasoning.
-4. **How should company and rest work?** Explore thread-scoped invitations for human and agent exchanges, explicit stopping points, and pausing inference on a shared computer. Capabilities, availability and completed actions should reflect verified state.
-5. **What is the first satisfying build?** A candidate is one local web conversation that handles a correction, retains a narrow perspective distinction, survives a restart and permits inspection and correction of that state, *plus* one tiny scheduled or self-initiated activity that can wait safely while inference is asleep.
-
-The candidate milestone is an invitation to choose, not an approved build specification. The participant's autonomy and psyche are fixed vision requirements even if their first implementation is deliberately modest. It would give the six-part cognitive picture a small practical foothold. Provider, model, frontend and storage choices should follow the chosen experience and verified constraints.
-
-## Continue from here
-
-Hold the founding discussion, record the few choices actually accepted, and define a bounded first implementation with observable success criteria. Consult [the architecture direction](ARCHITECTURE.md) for the wider skill and extension ambitions; those do not all need to be resolved before the first working conversation.
-
-Verify the current remote branch, pull request and commit before resuming. Record applicable checks and the exact resulting commit in the PR or handoff. Update this snapshot instead of appending a session diary, and keep private collaboration and deployment details outside the public repository.
+Maintain one source of truth for each decision and distinguish accepted principles, proposed mechanisms and verified implementation. Keep personal conversations, credentials and installation state out of this public repository. Publish recoverable checkpoints and describe checks that actually ran; avoid creating empty infrastructure merely to signal progress.

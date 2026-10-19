@@ -50,7 +50,7 @@ Separate conversational events, deliberately retained memories, hypotheses, conf
 
 Cairn should be able to recognise limits, reconsider assumptions, repair misunderstandings and acquire useful procedures. Skill refinement and future specialist sub-models are possible routes. A larger stack or more agents is not automatically an improvement: assess their value through useful behaviour, reliability and resource cost.
 
-## Local-first home, unrestricted connections
+## Local-first home, composable connections
 
 **Local-first describes the default home for Cairn's core, not the geography of everything it can use.** By default, Cairn's coordination, retained identity and memory, configuration and web panel run on the installation owner's machine, with the browser interface served on localhost. A remote host or cloud account must not be required merely to run the stack. Core management and persisted state should remain available offline; conversation through inference requires at least one available local or remote model provider.
 

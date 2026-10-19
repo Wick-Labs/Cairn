@@ -8,7 +8,7 @@ The vision is resource-aware presence when the host is available, not nonstop GP
 
 ## Project state
 
-This branch contains a **founding documentation scaffold only**. There is no runnable application, web panel, model integration, skill runtime or Slack bot yet. Aspirations below are not implemented features. Read [current state](docs/STATUS.md) before beginning work.
+This repository currently contains a **founding documentation scaffold only**. There is no runnable application, web panel, model integration, skill runtime or Slack bot yet. Aspirations below are not implemented features. Read [current state](docs/STATUS.md) before beginning work.
 
 ## Local-first home, mix-and-match capabilities
 
